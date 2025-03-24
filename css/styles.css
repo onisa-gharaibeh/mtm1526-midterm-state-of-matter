@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap');
+
+/* 
+Color Scheme: Triad
+Colors:
+    #4A90E2 Soft Blue
+    #F2616B soft red 
+    #7ED321 Fresh Green
+
+Prof: Line height ratio has to be between 1.4 and 1.6.
+Prof: You need to use following font-sizes:
+        Mobile View: 0.75rem
+        Tablet/Desktop View: 1rem
+*/
+
+:root {
+    --fnt: .75rem;
+    --lnh: 1.4rem;
+    --hdfnt: 'Poppins', sans-serif;
+    --bdfnt: 'Open Sans', sans-serif;
+
+
+    --blu: #61c0f3;
+    --bg: #EEEDF0;
+    --sft: #F2616B;
+    --grn: rgba(117, 239, 111, 0.8);
+    --txt: #001C2A;
+    --wht: white;
+}
+
+
+
+/*
+---------- DEFAULTS
+*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: var(--fnt);
+    line-height: var(--lnh);
+
+    color: var(--txt);
+    background-color: var(--bg);
+    font-family: var(--bdfnt);
+    padding: 1em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: var(--txt);
+    transition: all .3s;
+}
+
+a:hover {
+    color: var(--sft);
+    transform: scale(1.1);
+}
+
+h1,
+h2 {
+    font-family: var(--hdfnt);
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: var(--sft);
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+
+.wrapper {
+    /* 
+       Prof: Max-width of content is 60rem.
+    */
+    max-width: 60rem;
+    margin: auto;
+
+    background-color: var(--wht);
+    border-radius: 2em;
+    overflow: hidden;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+/* ---- Header */
+
+header {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/solid.jpg);
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(.4em);
+    z-index: 0;
+}
+
+header>* {
+    position: relative;
+    z-index: 1;
+}
+
+.masthaed {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2em;
+    justify-content: space-between;
+    text-align: center;
+    background-color: var(--grn);
+    width: 100%;
+}
+
+.navbar li {
+    width: 100%;
+}
+
+.navbar li a {
+    display: block;
+    width: 100%;
+    gap: 1em;
+    padding: .5em;
+    min-width: 6em;
+}
+
+/* ---- MAIN */
+
+
+/* ---- Controls */
+
+.controls {
+    /* padding: 2em; */
+    display: flex;
+    padding-top: 1em;
+    background-color: var(--bg);
+}
+
+.controls button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    padding: .5em 1em;
+    color: #b1b0b0;
+    font-size: 1.5rem;
+    /* border-bottom: solid .3em #d1d1d1; */
+    border-radius: .4em .4em 0 0;
+
+    transition: all 1s;
+
+}
+
+.controls button:hover {
+    color: var(--grn);
+    transform: scale(1.1);
+    /* border-bottom: solid .3em var(--grn); */
+}
+
+#active {
+    color: var(--sft);
+    border-color: var(--wht);
+    background-color: var(--wht);
+}
+
+/* ---- Content */
+
+.content {
+    padding: 2em;
+    border-radius: 2em;
+}
+
+.content h2 {
+    margin-bottom: 1em;
+}
+
+.content>div {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+}
+
+.content img {
+    border-radius: 200em;
+    box-shadow: 0 7px 5px rgba(0, 0, 0, 0.2);
+    transition: all 1s;
+}
+
+.content img:hover {
+    transform: scale(.9);
+    box-shadow: 0px 8px 8px var(--sft);
+}
+
+/* ---- Footer */
+
+footer {
+    text-align: center;
+    background-color: var(--blu);
+}
+
+.socials {
+    padding: .5em 2em;
+    font-size: 1.3rem;
+    display: flex;
+    gap: 2em;
+    justify-content: space-around;
+    background-color: var(--grn);
+}
+
+.socials li a {
+    display: block;
+}
+
+footer p {
+    padding: 2em;
+}
+
+/* 
+Prof: Break-point for responsive design will be at: 30rem. 
+*/
+
+@media only screen and (min-width: 30em) {
+
+    :root {
+        --fnt: 1rem;
+        --lnh: 1.6rem;
+    }
+
+    h1 {
+        font-size: 3.3rem;
+    }
+
+    h2 {
+        font-size: 2.3rem;
+    }
+
+    .navbar {
+        flex-direction: row;
+    }
+
+    .controls button {
+        font-size: 2rem;
+    }
+
+    .content>div {
+        flex-direction: row-reverse;
+    }
+
+    .content img {
+        max-width: 40%;
+        flex: 1;
+    }
+
+}
