@@ -45,11 +45,11 @@ body {
     color: var(--txt);
     background-color: var(--bg);
     font-family: var(--bdfnt);
-    padding: 1em;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     min-height: 100vh;
 }
 
@@ -61,7 +61,7 @@ a {
 
 a:hover {
     color: var(--sft);
-    transform: scale(1.1);
+    transform: scale(1.1) translateX(2em);
 }
 
 h1,
@@ -95,6 +95,11 @@ img {
     max-width: 60rem;
     margin: auto;
 
+    /* 
+        prof: The gutter of white space around the content is 2rem. 
+    */
+    margin: 2rem;
+
     background-color: var(--wht);
     border-radius: 2em;
     overflow: hidden;
@@ -112,7 +117,9 @@ header {
     background-size: cover;
     position: relative;
     overflow: hidden;
-    text-align: center;
+
+    /* Prof: Everything aligned left. */
+    text-align: left;
 }
 
 header::before {
@@ -143,7 +150,8 @@ header>* {
     flex-direction: column;
     padding: 0 2em;
     justify-content: space-between;
-    text-align: center;
+    /* Prof: Everything aligned left. */
+    text-align: left;
     background-color: var(--grn);
     width: 100%;
 }
@@ -271,8 +279,18 @@ Prof: Break-point for responsive design will be at: 30rem.
         font-size: 2.3rem;
     }
 
+    header {
+        text-align: center;
+    }
+
     .navbar {
+        /* Prof: Nav-bar items horizontally aligned. */
         flex-direction: row;
+        text-align: center;
+    }
+
+    a:hover {
+        transform: scale(1.1);
     }
 
     .controls button {
@@ -284,7 +302,8 @@ Prof: Break-point for responsive design will be at: 30rem.
     }
 
     .content img {
-        max-width: 40%;
+        /* Prof:  Main-content image-width is 25%. */
+        max-width: 25%;
         flex: 1;
     }
 
